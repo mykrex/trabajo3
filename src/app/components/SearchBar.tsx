@@ -4,6 +4,10 @@ import {useState} from "react";
 import {FaSearch} from "react-icons/fa";
 import "./SearchBar.css";
 
+interface LocationResult {
+
+}
+
 export default function SearchBar() {
 
     const [input, setInput] = useState("")
@@ -27,7 +31,8 @@ export default function SearchBar() {
 
             console.log("Results: ",results);
         })
-        .catch((error) => { //In case we are unable to access the API
+
+        .catch((error) => { //In case we have an error with the API
             console.error("Error al hacer fetch: ", error);
         });
     };
