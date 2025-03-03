@@ -9,7 +9,7 @@ export default function SearchBar({setResults}: any) {
     const [input, setInput] = useState("")
 
     const fetchData = (value: string) => { /** here value refers to the name of the city */
-        fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${value}&count=1&language=en&format=json`)
+        fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${value}&language=en&format=json`)
             .then((response) => response.json())
             .then(json => {
             // We ensure that 'json.results' exist and is an array
@@ -37,6 +37,12 @@ export default function SearchBar({setResults}: any) {
 
     const handleChange = (value: string) => {
         setInput(value)
+
+        if (!value){
+            setResults([]);
+            return;
+        }
+
         fetchData(value)
     }
 
