@@ -6,7 +6,7 @@ import SearchBar from "./components/SearchBar";
 import SearchResultsList from "./components/SearchResultsList";
 import WeatherCard from "./components/WeatherCard";
 
-import { WeatherData, Result } from "./types/weather";
+import { WeatherData, Result } from "./types/Weather";
 
 
 export default function Home() {
